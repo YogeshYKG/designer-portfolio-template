@@ -1,0 +1,73 @@
+.navbarContainer {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92%, 1300px);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(20px);
+    border: 1px solid #CDCDCD;
+    box-shadow: 5px 5px 15px 0px #0000000D;
+    border-radius: 10px;
+    z-index: 9999;
+    transition:
+        transform .35s ease,
+        opacity .35s ease,
+        box-shadow .35s ease;
+}
+
+.hidden {
+    transform: translateX(-50%) translateY(-180%);
+    opacity: 0;
+    pointer-events: none;
+}
+.logo{
+    font-size:40px;
+    font-weight:800;
+    font-family:var(--font-sora);
+    cursor: pointer;
+}
+
+.links{
+    display:flex;
+    align-items:center;
+    gap:2.5rem;
+}
+
+.links button{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:13px;
+    text-transform:uppercase;
+    font-family:var(--font-geist);
+    transition:.25s;
+}
+
+.links button:hover{
+    opacity:.65;
+}
+
+.resume{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:42px;
+    padding:0 24px;
+    border-radius:6px;
+    background:#141515;
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    font-family:var(--font-geist);
+}
+
+.resume:hover{
+
+    background:#000;
+}

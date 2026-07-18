@@ -1,0 +1,56 @@
+src/
+├── app           
+│   ├── [slug]         
+│   │   └── page.tsx    
+│   ├── api            
+│   │   └── contact    
+│   │       └── route.ts    
+│   ├── favicon.ico    
+│   ├── layout.tsx     
+│   └── page.tsx       
+├── components    
+│   └── designer-v1    
+│       ├── caseStudies         
+│       │   ├── CaseStudies.module.css    
+│       │   └── CaseStudies.tsx           
+│       ├── contact             
+│       │   ├── Contact.module.css    
+│       │   └── Contact.tsx           
+│       ├── designProcess       
+│       │   ├── DesignProcess.module.css    
+│       │   └── DesignProcess.tsx           
+│       ├── featuredProjects    
+│       │   ├── FeaturedProjects.module.css    
+│       │   └── FeaturedProjects.tsx           
+│       ├── footer              
+│       │   ├── Footer.module.css    
+│       │   └── Footer.tsx           
+│       ├── hero                
+│       │   ├── Hero.module.css    
+│       │   └── Hero.tsx           
+│       ├── navbar              
+│       │   ├── Navbar.module.css    
+│       │   └── Navbar.tsx           
+│       ├── sidebar             
+│       │   ├── Sidebar.module.css    
+│       │   └── Sidebar.tsx           
+│       ├── strip               
+│       │   ├── Strip.module.css    
+│       │   └── Strip.tsx           
+│       └── tools               
+│           ├── Tools.module.css    
+│           └── Tools.tsx           
+├── config        
+├── data          
+│   └── varun.json    
+├── lib           
+│   ├── designers.ts    
+│   └── mail.ts         
+├── styles        
+│   └── global.css    
+├── templates     
+│   └── designers-v1    
+│       ├── designer-v1.module.css    
+│       └── index.tsx                 
+└── types         
+    └── designer.ts    

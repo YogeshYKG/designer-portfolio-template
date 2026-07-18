@@ -1,0 +1,123 @@
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  /* Container */
+  --max-width: 1440px;
+
+  /* Fonts */
+  /* 
+  --font-geist: var(--font-geist);
+  --font-roboto: var(--font-roboto);
+  --font-sora: var(--font-sora); 
+  */
+
+  /* Colors */
+  --color-text-primary: #141515;
+  --color-text-secondary: #666666;
+  --color-background: #F5F5F7;
+
+}
+
+.layoutContainer {
+  width: calc(100%);
+  margin-inline: auto;
+}
+
+@media (min-width: 1440px) {
+  .layoutContainer {
+    width: calc(100% - 3rem);
+    max-width: var(--max-width);
+    margin-inline: auto;
+  }
+}
+
+
+/* ==========================================================================
+   Component Global Styles
+   ========================================================================== */
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-left: 14px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  font-family: var(--font-roboto);
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.section-title-light {
+  position: relative;
+  display: inline-block;
+  padding-left: 14px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: var(--font-roboto);
+}
+
+.section-title-light::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+
+.section-description {
+  font-size: 42px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-family: var(--font-sora);
+}
+
+.section-description-light {
+  font-size: 42px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: var(--font-sora);
+}

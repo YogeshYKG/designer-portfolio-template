@@ -1,0 +1,412 @@
+{
+  "slug": "varun",
+  "template": "designer-v1",
+  "seo": {
+    "title": "Varun Sharma — Product Designer",
+    "description": "Product Designer crafting thoughtful digital experiences with a focus on simplicity, usability, and human-centered design.",
+    "keywords": [
+      "Product Designer",
+      "UI Designer",
+      "UX Designer",
+      "Portfolio",
+      "Design Systems"
+    ],
+    "image": "/images/varun/og-cover.jpg",
+    "canonical": "https://varun.example.com"
+  },
+  "theme": {
+    "primary": "#111111",
+    "accent": "#FF6B35",
+    "background": "#FFFFFF",
+    "surface": "#F7F7F7",
+    "text": "#111111",
+    "textSecondary": "#666666"
+  },
+  "profile": {
+    "name": "Varun Sharma",
+    "nickname": "Varun",
+    "role": "Product Designer",
+    "tagline": "Designing products that people genuinely enjoy using.",
+    "bio": "I design digital products that balance business goals with delightful user experiences. I enjoy building scalable design systems, simplifying complex workflows, and collaborating closely with engineers.",
+    "location": "Jaipur, India",
+    "email": "guptayogesh484.00@gmail.com",
+    "phone": "+91 9876543210",
+    "website": "https://varun.design",
+    "avatar": "/images/varun/avatar.png",
+    "resume": "/resume/varun.pdf"
+  },
+  "socials": {
+    "behance": "https://behance.net/varun",
+    "dribbble": "https://dribbble.com/varun",
+    "linkedin": "https://linkedin.com/in/varun",
+    "instagram": "https://instagram.com/varun",
+    "github": "https://github.com/varun"
+  },
+  "sections": {
+    "navbar": true,
+    "sidebarIcons": true,
+    "hero": true,
+    "featuredProjects": true,
+    "designProcess": true,
+    "caseStudies": true,
+    "tools": true,
+    "testimonials": true,
+    "contact": true
+  },
+  "data": {
+    "navbar": {
+      "logoInitials": "VP",
+      "navItems": [
+        {
+          "label": "VP",
+          "id": "hero",
+          "required": false
+        },
+        {
+          "label": "Projects",
+          "id": "featured-projects",
+          "required": true
+        },
+        {
+          "label": "Design Process",
+          "id": "design-process",
+          "required": true
+        },
+        {
+          "label": "Case Study",
+          "id": "case-studies",
+          "required": true
+        },
+        {
+          "label": "Tools",
+          "id": "tools",
+          "required": true
+        },
+        {
+          "label": "Contact",
+          "id": "contact",
+          "required": true
+        }
+      ]
+    },
+    "hero": {
+      "id": "hero",
+      "greeting": "Hello, I'm Varun Patel",
+      "title": "I Design Digital Experiences",
+      "description": "I'm Varun Patel, focused on creating intuitive, scalable & visually refined digital experiences.",
+      "CTA": "VIEW WORK",
+      "image": "/images/varun/hero-image.jpg",
+      "modelImage": "/resources/images/hero/model1.png"
+    },
+    "featuredProjects": {
+      "id": "featured-projects",
+      "title": "FEATURED PROJECTS",
+      "description": "Creating Digital Experiences That Drives Results",
+      "projects": [
+        {
+          "title": "Blueberry HRMS Mobile App",
+          "shadowTitle": "HRMS APP",
+          "description": "A seamless HRMS solution designed to simplify everyday workforce management.",
+          "tags": [
+            "Employee Experience",
+            "Payroll",
+            "Self-Service",
+            "Leave Management",
+            "Productivity",
+            "Attendance"
+          ],
+          "CTA": "VIEW PROJECT",
+          "image": "/resources/images/featuredProjects/image1.png",
+          "brandimage": "/resources/images/featuredProjects/brand1.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Blueberry HRMS & CRM",
+          "shadowTitle": "HRMS",
+          "description": "A unified platform for smarter HR and customer management.",
+          "tags": [
+            "Dashboard",
+            "Analytics",
+            "Productivity",
+            "Desktop App",
+            "Workforce",
+            "Enterprice"
+          ],
+          "CTA": "VIEW PROJECT",
+          "image": "/resources/images/featuredProjects/image2.png",
+          "brandimage": "/resources/images/featuredProjects/brand2.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Pestel & Partner",
+          "shadowTitle": "Finance",
+          "description": "A modern finance website built for trust and growth.",
+          "tags": [
+            "Finance",
+            "Corporate Website",
+            "Consulting",
+            "Enterprice",
+            "Business Service",
+            "Professional"
+          ],
+          "CTA": "VIEW PROJECT",
+          "image": "/resources/images/featuredProjects/image3.png",
+          "brandimage": "/resources/images/featuredProjects/brand3.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "ProBond",
+          "shadowTitle": "Insurace",
+          "description": "A trusted platform for insurance and surety bond solutions.",
+          "tags": [
+            "Insurace",
+            "Surety Bonds",
+            "Financial Services",
+            "Risk Management",
+            "Business Solutions",
+            "Trust"
+          ],
+          "CTA": "VIEW PROJECT",
+          "image": "/resources/images/featuredProjects/image4.png",
+          "brandimage": "/resources/images/featuredProjects/brand4.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Roadster",
+          "shadowTitle": "bikes",
+          "description": "A seamless platform for discovering and buying motorcycles.",
+          "tags": [
+            "Bike Marketplace",
+            "Motorcycle",
+            "Online Store",
+            "Dealership",
+            "Vehicle Sale",
+            "E-Commerce"
+          ],
+          "CTA": "VIEW PROJECT",
+          "image": "/resources/images/featuredProjects/image5.png",
+          "brandimage": "/resources/images/featuredProjects/brand5.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Next Holidays",
+          "shadowTitle": "Travel",
+          "description": "Your gateway to unforgettable travel experiences.",
+          "tags": [
+            "Travel",
+            "Holiday Packages",
+            "Flight Booking",
+            "Hotel & Crusies",
+            "Travel Acency",
+            "Vacation"
+          ],
+          "CTA": "VIEW PROJECT",
+          "image": "/resources/images/featuredProjects/image6.png",
+          "brandimage": "/resources/images/featuredProjects/brand6.png",
+          "link": "/projects/blueberry-hrms"
+        }
+      ]
+    },
+    "designProcess": {
+      "id": "design-process",
+      "title": "DESIGN PROCESS",
+      "description": "From Research to Pixel-Perfect Product Design",
+      "phases": [
+        {
+          "title": "Discover",
+          "phase-sno": "Phase 1",
+          "timePeriod": "Week 1-2",
+          "process": [
+            "Stakeholder Meetings",
+            "Business Requirements",
+            "User Research",
+            "Competitive Analysis",
+            "Project Scope"
+          ]
+        },
+        {
+          "title": "Define",
+          "phase-sno": "Phase 2",
+          "timePeriod": "Week 3-4",
+          "process": [
+            "Stakeholder Meetings",
+            "Business Requirements",
+            "User Research",
+            "Competitive Analysis",
+            "Project Scope"
+          ]
+        },
+        {
+          "title": "Ideate",
+          "phase-sno": "Phase 3",
+          "timePeriod": "Week 3-5",
+          "process": [
+            "Brainstorming",
+            "Design Conecpts",
+            "UX Strategy",
+            "Low-Fidelity Wireframes",
+            "Interaction Planning"
+          ]
+        },
+        {
+          "title": "Design & Prototype",
+          "phase-sno": "Phase 3",
+          "timePeriod": "Week 3-5",
+          "process": [
+            "Design System",
+            "High-Fidelety UI System",
+            "Micro Interaction",
+            "Accessibility Review",
+            "Uability Testing",
+            "Feedback Collection"
+          ]
+        },
+        {
+          "title": "Test & Launch",
+          "phase-sno": "Phase 3",
+          "timePeriod": "Week 3-5",
+          "process": [
+            "Develop Handoff",
+            "Design Documentation",
+            "QA Support",
+            "Asset Transfer"
+          ]
+        }
+      ]
+    },
+    "caseStudies": {
+      "id": "case-studies",
+      "title": "CASE STUDY",
+      "description": "From Research to Pixel-Perfect Product Design",
+      "projects": [
+        {
+          "title": "Blueberry HRMS Mobile App",
+          "timePeriod": "8 Weeks Project",
+          "tags": [
+            "Performance",
+            "Payroll",
+            "Attendance",
+            "Leave Management",
+            "Employee Self-Service"
+          ],
+          "description": "A seamless HRMS solution designed to simplify everyday workforce management.",
+          "image": "/resources/images/case_studies/image1.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Project Management Tool",
+          "timePeriod": "10 Weeks Project",
+          "tags": [
+            "Planning",
+            "Tracking",
+            "Delivering",
+            "Productivity",
+            "Leadership",
+            "Teamwork"
+          ],
+          "description": "A seamless HRMS solution designed to simplify everyday workforce management.",
+          "image": "/resources/images/case_studies/image2.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Next holidays Mobile App & Website",
+          "timePeriod": "5 Weeks Project",
+          "tags": [
+            "Booking",
+            "Holiday",
+            "Flight & Hotel",
+            "Travel Platform",
+            "Journey",
+            "Vacation"
+          ],
+          "description": "An all-in-one travel booking platform for flights, hotels, cruises, and holiday packages.",
+          "image": "/resources/images/case_studies/image3.png",
+          "link": "/projects/blueberry-hrms"
+        },
+        {
+          "title": "Pastel & Partner Finance Website",
+          "timePeriod": "5 Weeks Project",
+          "tags": [
+            "Fintech",
+            "Investment",
+            "Financial Growth",
+            "Wealth Management",
+            "Client Trust",
+            "Planning"
+          ],
+          "description": "A professional financial platform delivering trusted investment and wealth management solutions.",
+          "image": "/resources/images/case_studies/image4.png",
+          "link": "/projects/blueberry-hrms"
+        }
+      ]
+    },
+    "tools": {
+      "id": "tools",
+      "title": "Tools",
+      "description": "From Research to Pixel-Perfect Product Design",
+      "toolIcons": [
+        {
+          "name": "Figma",
+          "icon": "/resources/images/tools/image1.png"
+        },
+        {
+          "name": "Claude",
+          "icon": "/resources/images/tools/image2.png"
+        },
+        {
+          "name": "ChatGPT",
+          "icon": "/resources/images/tools/image3.png"
+        },
+        {
+          "name": "Lovable",
+          "icon": "/resources/images/tools/image4.png"
+        },
+        {
+          "name": "Illustrator",
+          "icon": "/resources/images/tools/image5.png"
+        },
+        {
+          "name": "Photoshop",
+          "icon": "/resources/images/tools/image6.png"
+        },
+        {
+          "name": "Premiere Pro",
+          "icon": "/resources/images/tools/image7.png"
+        },
+        {
+          "name": "After Effects",
+          "icon": "/resources/images/tools/image8.png"
+        }
+      ]
+    },
+    "contact": {
+      "id": "contact",
+      "title": "Send me a message",
+      "description": "Fill in detail below and I will get back to you as soon as possible.",
+      "image": "/resources/images/contact/image1.png",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter Full Name",
+          "required": true,
+          "iconImage": "/resources/images/contact/icon1.svg"
+        },
+        "mobile": {
+          "label": "Mobile Number",
+          "placeholder": "Mobile Number",
+          "required": true,
+          "iconImage": "/resources/images/contact/icon2.svg"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Email Address",
+          "required": true,
+          "iconImage": "/resources/images/contact/icon3.svg"
+        },
+        "submitButton": {
+          "text": "SUBMIT"
+        }
+      }
+    }
+  }
+}

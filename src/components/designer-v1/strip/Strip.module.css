@@ -1,0 +1,108 @@
+.strip{
+
+    width:100%;
+
+    overflow:hidden;
+}
+
+/*==========================
+COMMON
+==========================*/
+
+.track{
+
+    width:max-content;
+
+    display:flex;
+    align-items:center;
+
+    animation:marquee 28s linear infinite;
+}
+
+.item{
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+}
+
+/*==========================
+TYPE 1
+==========================*/
+
+.dark{
+
+    background:#111;
+    padding:18px 0;
+}
+
+.dark .item{
+
+    color:#fff;
+
+    font-family:var(--font-geist);
+
+    font-size:18px;
+    font-weight:500;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+}
+
+.star{
+
+    margin:0 24px;
+
+    font-size:18px;
+}
+
+/*==========================
+TYPE 2
+==========================*/
+
+.outline{
+
+    padding:28px 0;
+    background-color: #F5F5F7;
+}
+
+.outline .item{
+    font-family:var(--font-sora);
+    font-size:120px;
+    font-weight:700;
+    line-height:.9;
+    text-transform:uppercase;
+    margin-right:3rem;
+    margin-bottom: 3rem;
+}
+
+.outline .item span{
+
+    color:transparent;
+
+    -webkit-text-stroke:1px #141515;
+}
+
+.outline .item:nth-child(odd) span{
+
+    color:#141515;
+
+    -webkit-text-stroke:0;
+}
+
+/*==========================
+ANIMATION
+==========================*/
+
+@keyframes marquee{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+}

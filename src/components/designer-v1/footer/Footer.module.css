@@ -1,0 +1,16 @@
+.footerContainer {
+    width: 100%;
+    aspect-ratio: 1440/60;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-roboto);
+    color: #141515;
+    line-height: 23.52px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
