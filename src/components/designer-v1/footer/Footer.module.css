@@ -14,3 +14,10 @@
     font-weight: 500;
 
 }
+
+@media (max-width: 768px) {
+    .footerContainer{
+        aspect-ratio: unset;
+        margin: 0.5rem 0;
+    }
+}
