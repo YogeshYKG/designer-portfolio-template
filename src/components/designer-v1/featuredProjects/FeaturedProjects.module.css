@@ -313,102 +313,84 @@ DOTS
 RESPONSIVE
 ================================================== */
 
-/*
-@media (max-width:1200px){
 
-    .featuredProjectsContainer{
-        padding:3rem 2rem;
+@media (max-width:768px) {
+
+    .featuredProjectsContainer {
+        padding: 3rem 1rem;
     }
 
-    .card{
 
-        aspect-ratio:auto;
-
-        flex-direction:column;
-
-        gap:2rem;
+    .card {
+        aspect-ratio: unset;
+        flex-direction: column;
     }
 
-    .left,
-    .center,
-    .right{
-
-        flex:unset;
-        width:100%;
+    /* LEFT */
+    .left {
+        flex: none;
+        width: 100%;
+        aspect-ratio: 1/1.28;
+        /* adjust as needed */
     }
 
-    .left{
-
-        flex-direction:row;
-        align-items:center;
+    .leftCanvas {
+        margin: 2rem 1rem 0rem 1rem;
     }
 
-    .center{
-
-        min-height:420px;
+    .backgroundTitle {
+        width: 100%;
+        font-size: clamp(2.2rem, 15vw, 4rem);
     }
 
-    .backgroundTitle{
-
-        left:50%;
-        top:1rem;
-
-        transform:translateX(-50%);
-
-        font-size:4rem;
+    /* serial -> left bottom */
+    .serial {
+        left: 0;
+        bottom: 0;
+        font-size: .75rem;
     }
 
-    .projectImage{
-
-        width:60%;
+    /* brand -> right bottom */
+    .brandImage {
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 40%;
     }
 
-    .right{
-
-        padding:0 1rem 2rem;
-    }
-}
-
-@media (max-width:768px){
-
-    .featuredProjectsContainer{
-
-        padding:2rem 1rem;
+    /* project image -> center */
+    .projectImage {
+        right: 50%;
+        bottom: 2rem;
+        transform: translateX(50%);
+        width: 100%;
     }
 
-    .center{
-
-        min-height:300px;
+    .right {
+        gap: 1rem;
+        padding: 1rem 1rem 2rem 1rem;
     }
 
-    .backgroundTitle{
-
-        font-size:2.8rem;
+    .title {
+        font-size: 18px;
     }
 
-    .projectImage{
-
-        width:85%;
+    .tags {
+        gap: 0.5rem;
     }
 
-    .title{
+    .tags span {
 
-        font-size:1.5rem;
+        padding: 6px 8px;
+        font-size: 12px;
     }
 
-    .description{
-
-        font-size:.95rem;
+    .bottom {
+        gap: 1rem;
     }
 
-    .tags span{
-
-        font-size:11px;
-    }
-
-    .cta{
-
-        width:100%;
+    .cta {
+        width: stretch;
+        padding: 0.8rem;
     }
 }
-*/

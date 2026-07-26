@@ -1,6 +1,4 @@
 import type { Designer } from "@/types/designer";
-import styles from "@/templates/designers-v1/designer-v1.module.css";
-
 import CaseStudies from "@/components/designer-v1/caseStudies/CaseStudies";
 import Tools from "@/components/designer-v1/tools/Tools";
 import Contact from "@/components/designer-v1/contact/Contact";
@@ -20,7 +18,7 @@ export default function DesignerV1({ designer }: Props) {
   return (
     <>
       <Navbar navbarData={designer} />
-      <Sidebar sidebarData={designer.socials} />
+      <Sidebar sidebarData={designer.socials} /> 
       <main className="layoutContainer">
         {designer?.sections?.hero && <Hero data={designer.data.hero} background="grid" />}
         <Strip type={1} />

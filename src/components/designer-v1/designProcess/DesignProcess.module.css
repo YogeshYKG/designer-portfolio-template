@@ -16,15 +16,11 @@
     inset: 0;
 
     background-image:
-        linear-gradient(
-            rgba(255,255,255,.05) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.05) 1px,
-            transparent 1px
-        );
+        linear-gradient(rgba(255, 255, 255, .05) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, .05) 1px,
+            transparent 1px);
 
     background-size: 48px 48px;
 
@@ -38,12 +34,10 @@
     inset: 0;
 
     background:
-        radial-gradient(
-            circle at center,
+        radial-gradient(circle at center,
             transparent 20%,
-            rgba(35,206,206,.18) 55%,
-            rgba(20,21,21,.75) 100%
-        );
+            rgba(35, 206, 206, .18) 55%,
+            rgba(20, 21, 21, .75) 100%);
 
     pointer-events: none;
 
@@ -64,6 +58,7 @@
 .phase {
     position: relative;
     width: 240px;
+    margin-top: var(--offset);
 
     display: flex;
     flex-direction: column;
@@ -75,7 +70,7 @@
     filter: blur(18px);
 
     transition:
-        transform 2s cubic-bezier(.22,1,.36,1),
+        transform 2s cubic-bezier(.22, 1, .36, 1),
         opacity 2s ease,
         filter 2s ease;
 
@@ -184,4 +179,80 @@
     position: absolute;
     left: 0;
     top: 9px;
+}
+
+
+@media (max-width:768px) {
+
+    .designProcessContainer {
+        padding: 3rem 1rem;
+    }
+
+    .processWrapper {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .phase {
+        width: 100%;
+        align-items: flex-start;
+        padding-left: 2.5rem;
+        margin-top: 0;
+    }
+
+    .processWrapper {
+        position: relative;
+    }
+
+    .processWrapper::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(255, 255, 255, .18);
+    }
+
+    .phase::after {
+        display: none;
+    }
+
+    .phase::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 4px;
+
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+        background: #fff;
+        border: 4px solid #141515;
+        z-index: 2;
+    }
+
+    .phaseHeader {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .phaseHeader h3 {
+        font-size: 18px;
+    }
+
+    .phaseMeta {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    /* .line {
+        display: none;
+    } */
+
+
+
 }

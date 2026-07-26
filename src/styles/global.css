@@ -121,3 +121,13 @@ body {
   font-weight: 600;
   font-family: var(--font-sora);
 }
+
+
+@media (max-width: 768px) {
+  .section-description,
+  .section-description-light {
+    margin-top: 0.5rem;
+    font-size: 18px;
+    text-align: center;
+  }
+}

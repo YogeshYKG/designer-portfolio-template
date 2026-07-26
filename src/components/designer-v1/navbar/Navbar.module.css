@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background: rgba(255,255,255,.92);
+    background: rgba(255, 255, 255, .92);
     backdrop-filter: blur(20px);
     border: 1px solid #CDCDCD;
     box-shadow: 5px 5px 15px 0px #0000000D;
@@ -26,48 +26,177 @@
     opacity: 0;
     pointer-events: none;
 }
-.logo{
-    font-size:40px;
-    font-weight:800;
-    font-family:var(--font-sora);
+
+.logo {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: var(--font-sora);
     cursor: pointer;
 }
 
-.links{
-    display:flex;
-    align-items:center;
-    gap:2.5rem;
+.links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
 }
 
-.links button{
-    background:none;
-    border:none;
-    cursor:pointer;
-    font-size:13px;
-    text-transform:uppercase;
-    font-family:var(--font-geist);
-    transition:.25s;
+.links button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: var(--font-geist);
+    transition: .25s;
 }
 
-.links button:hover{
-    opacity:.65;
+.links button:hover {
+    opacity: .65;
 }
 
-.resume{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:42px;
-    padding:0 24px;
-    border-radius:6px;
-    background:#141515;
-    color:white;
-    text-decoration:none;
-    font-size:13px;
-    font-family:var(--font-geist);
+.resume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    padding: 0 24px;
+    border-radius: 6px;
+    background: #141515;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: var(--font-geist);
 }
 
-.resume:hover{
+.resume:hover {
+    background: #000;
+}
 
-    background:#000;
+
+.hamburger {
+    display: none;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .navbarContainer {
+        top: 1rem;
+        position: fixed;
+        overflow: visible;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .links,
+    .resume {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+        border: 1px solid #CDCDCD;
+        box-shadow: 5px 5px 15px 0px #0000000D;
+        border-radius: 10px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+        background: #141515;
+        border-radius: 999px;
+        transition: all .25s ease;
+        transform-origin: center;
+    }
+
+    .hamburgerOpen span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburgerOpen span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburgerOpen span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, .96);
+        backdrop-filter: blur(20px);
+        border: 1px solid #CDCDCD;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px 0px #0000000D;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition:
+            opacity .25s ease,
+            transform .25s ease,
+            visibility .25s ease;
+    }
+
+    .mobileMenuOpen {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .mobileMenu button {
+        width: 100%;
+        padding: .5rem 0;
+        background: none;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-family: var(--font-geist);
+        transition: opacity .25s ease;
+    }
+
+    .mobileMenu button:hover {
+        opacity: .65;
+    }
+
+    .mobileResume {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0rem;
+        height: 42px;
+        border-radius: 6px;
+        background: #141515;
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        font-family: var(--font-geist);
+    }
+
+    .mobileResume:hover {
+        background: #000;
+    }
 }

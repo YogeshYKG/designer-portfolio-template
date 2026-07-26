@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 3rem 4rem 12rem;
+    padding: 3rem 4rem;
 }
 
 /* ==========================================
@@ -172,4 +172,90 @@ IMAGE
     object-fit: cover;
 
     border-radius: 6px;
+}
+
+@media (max-width:768px) {
+
+    .caseStudiesContainer {
+        padding: 3rem 1rem 0 1rem;
+    }
+
+    .list {
+        gap: 1rem;
+    }
+
+    /* .stickyCard {
+        position: relative;
+        top: auto !important;
+        margin-bottom: 0;
+    } */
+
+    .card {
+        aspect-ratio: unset;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* ---------- Image ---------- */
+
+    .imageWrapper {
+        order: -1;
+        flex: none;
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .image {
+        border-radius: 8px;
+    }
+
+    /* ---------- Meta ---------- */
+
+    .meta {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        border-right: none;
+        gap: .5rem;
+    }
+
+    .serial {
+        font-size: 13px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .time {
+        margin-top: 0;
+        font-size: 13px;
+    }
+
+    /* ---------- Content ---------- */
+
+    .content {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        border-right: none;
+        gap: 1rem;
+    }
+
+    .content p {
+        margin-top: 0;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .tags {
+        gap: .5rem;
+    }
+
+    .tags span {
+        font-size: 12px;
+        padding: .45rem .7rem;
+    }
 }

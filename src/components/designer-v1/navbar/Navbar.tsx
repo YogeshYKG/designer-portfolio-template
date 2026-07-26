@@ -11,6 +11,7 @@ type NavbarProps = {
 
 export default function Navbar({ navbarData }: NavbarProps) {
   const [hidden, setHidden] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const lastScrollY = useRef(0);
 
@@ -18,23 +19,23 @@ export default function Navbar({ navbarData }: NavbarProps) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Always show at the top
       if (currentScrollY < 20) {
         setHidden(false);
         lastScrollY.current = currentScrollY;
         return;
       }
 
-      // Ignore tiny movements
-      if (Math.abs(currentScrollY - lastScrollY.current) < 8) {
+      if (
+        Math.abs(currentScrollY - lastScrollY.current) <
+        8
+      ) {
         return;
       }
 
       if (currentScrollY > lastScrollY.current) {
-        // Scrolling down
         setHidden(true);
+        setMenuOpen(false);
       } else {
-        // Scrolling up
         setHidden(false);
       }
 
@@ -69,6 +70,11 @@ export default function Navbar({ navbarData }: NavbarProps) {
     });
   };
 
+  const handleNavClick = (id: string) => {
+    scrollTo(id);
+    setMenuOpen(false);
+  };
+
   return (
     <nav
       className={`${styles.navbarContainer} ${
@@ -78,12 +84,15 @@ export default function Navbar({ navbarData }: NavbarProps) {
       <div
         className={styles.logo}
         onClick={() =>
-          scrollTo(navbarData.data.navbar.navItems[0].id)
+          handleNavClick(
+            navbarData.data.navbar.navItems[0].id
+          )
         }
       >
         {navbarData.data.navbar.logoInitials}
       </div>
 
+      {/* Desktop Navigation */}
       <div className={styles.links}>
         {navbarData.data.navbar.navItems
           .filter((item) => item.required)
@@ -105,6 +114,52 @@ export default function Navbar({ navbarData }: NavbarProps) {
       >
         Download Resume
       </a>
+
+      {/* Mobile Hamburger */}
+      <button
+        type="button"
+        aria-label="Toggle navigation"
+        className={`${styles.hamburger} ${
+          menuOpen ? styles.hamburgerOpen : ""
+        }`}
+        onClick={() =>
+          setMenuOpen((prev) => !prev)
+        }
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      {/* Mobile Menu */}
+      <div
+        className={`${styles.mobileMenu} ${
+          menuOpen ? styles.mobileMenuOpen : ""
+        }`}
+      >
+        {navbarData.data.navbar.navItems
+          .filter((item) => item.required)
+          .map((item) => (
+            <button
+              key={item.id}
+              onClick={() =>
+                handleNavClick(item.id)
+              }
+            >
+              {item.label}
+            </button>
+          ))}
+
+        <a
+          href={navbarData.profile.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.mobileResume}
+          onClick={() => setMenuOpen(false)}
+        >
+          Download Resume
+        </a>
+      </div>
     </nav>
   );
 }

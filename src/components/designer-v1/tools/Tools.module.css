@@ -30,15 +30,15 @@
 .marquee::before {
     left: 0;
     background: linear-gradient(to right,
-        var(--color-background),
-        transparent);
+            var(--color-background),
+            transparent);
 }
 
 .marquee::after {
     right: 0;
     background: linear-gradient(to left,
-        var(--color-background),
-        transparent);
+            var(--color-background),
+            transparent);
 }
 
 .track {
@@ -88,5 +88,31 @@
 
     to {
         transform: translateX(-50%);
+    }
+}
+
+
+@media (max-width:768px) {
+
+    .marquee{
+        margin-top: 2rem;
+    }
+
+    .track{
+        gap: 1rem;
+    }
+
+    .card {
+        gap: .5rem;
+        padding: 0.7rem 1.4rem 0.7rem 0.7rem;
+    }
+
+    .icon {
+        width: 24px;
+        height: 23px;
+    }
+
+    .name {
+        font-size: 14px;
     }
 }

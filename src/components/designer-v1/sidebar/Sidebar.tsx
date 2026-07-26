@@ -9,6 +9,9 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
+import { HiOutlineShare } from "react-icons/hi";
+
+
 import styles from "./Sidebar.module.css";
 import type { Designer } from "@/types/designer";
 
@@ -70,26 +73,38 @@ export default function Sidebar({
     },
   ];
 
+
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <aside
-      className={`${styles.sidebarContainer} ${
-        hidden ? styles.hidden : ""
-      }`}
+      className={`${styles.sidebarContainer} ${hidden ? styles.hidden : ""
+        } ${expanded ? styles.expanded : ""}` }
     >
-      {socials.map(
-        ({ icon, href }, index) =>
-          href && (
-            <a
-              key={index}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.icon}
-            >
-              {icon}
-            </a>
-          )
-      )}
+      <button
+        className={styles.toggle}
+        onClick={() => setExpanded((prev) => !prev)}
+      >
+        {expanded ? "✕" : <HiOutlineShare />}
+      </button>
+
+      <div className={styles.socialList}>
+        {socials.map(
+          ({ icon, href }, index) =>
+            href && (
+              <a
+                key={index}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.icon}
+                onClick={() => setExpanded(false)}
+              >
+                {icon}
+              </a>
+            )
+        )}
+      </div>
     </aside>
   );
 }

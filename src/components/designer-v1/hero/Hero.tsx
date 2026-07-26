@@ -57,6 +57,7 @@ const Hero = ({
                 src={data.modelImage}
                 alt={data.title}
                 className={styles.modelBgImageBottom}
+                
             />
 
             <div className={styles.content}>

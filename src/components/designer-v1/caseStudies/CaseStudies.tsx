@@ -2,6 +2,7 @@
 
 import styles from "@/components/designer-v1/caseStudies/CaseStudies.module.css";
 import type { Designer } from "@/types/designer";
+import { useEffect, useState } from "react";
 
 type Props = {
   data: Designer["data"]["caseStudies"];
@@ -57,6 +58,22 @@ const CaseStudyCard = ({
 };
 
 const CaseStudies = ({ data }: Props) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // initial check after mount
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section
       className={styles.caseStudiesContainer}
@@ -76,7 +93,9 @@ const CaseStudies = ({ data }: Props) => {
             key={index}
             className={styles.stickyCard}
             style={{
-              top: `${6 + index * 2}rem`,
+              top: isMobile
+                ? `${2 + index * 2}rem`
+                : `${6 + index * 2}rem`,
               zIndex: data.projects.length + index,
             }}
           >

@@ -7,11 +7,11 @@
     flex-direction: column;
     gap: 1rem;
     padding: .5rem;
-    background: rgba(255,255,255,.92);
+    background: rgba(255, 255, 255, .92);
     backdrop-filter: blur(20px);
     border: 1px solid #CDCDCD;
     border-radius: 999px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,.08);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .08);
     z-index: 9999;
     transition:
         transform .35s ease,
@@ -41,4 +41,94 @@
     transform: translateX(calc(50% + 100px));
     opacity: 0;
     pointer-events: none;
+}
+
+.toggle {
+    display: none;
+}
+
+.socialList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+@media (max-width:768px) {
+
+    .sidebarContainer {
+        top: auto;
+        right: 0.5rem;
+        bottom: 0.5rem;
+
+        transform: none;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: .75rem;
+
+        padding: .5rem;
+
+        border-radius: 28px;
+
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+
+        transition: all .3s ease;
+    }
+
+    /* Same element has both classes */
+    .sidebarContainer.expanded {
+        background: rgba(255, 255, 255, .92);
+        backdrop-filter: blur(20px);
+        border: 1px solid #CDCDCD;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, .08);
+    }
+
+    .toggle {
+
+        width: 52px;
+        height: 52px;
+        border: none;
+        border-radius: 50%;
+        background: #141515;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .socialList {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height .3s ease,
+            opacity .3s ease;
+    }
+
+    .expanded .socialList {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    .icon {
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .toggle {
+        display: flex;
+    }
+
+
 }

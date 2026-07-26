@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "@/components/designer-v1/designProcess/DesignProcess.module.css";
 import type { Designer } from "@/types/designer";
@@ -58,14 +58,15 @@ const DesignProcess = ({
             ref={(el) => {
               phaseRefs.current[index] = el;
             }}
-            className={`${styles.phase} ${
-              index === data.phases.length - 1
-                ? styles.lastPhase
-                : ""
-            }`}
-            style={{
-              marginTop: `${index * 5}rem`,
-            }}
+            className={`${styles.phase} ${index === data.phases.length - 1
+              ? styles.lastPhase
+              : ""
+              }`}
+            style={
+              {
+                "--offset": `${index * 5}rem`,
+              } as React.CSSProperties
+            }
           >
             <div className={styles.phaseHeader}>
               <h3>{phase.title}</h3>
