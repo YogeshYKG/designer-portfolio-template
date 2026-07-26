@@ -37,12 +37,14 @@ const ProjectCard = ({
                         src={cardDetails.brandimage}
                         alt={`${cardDetails.title} Brand`}
                         className={styles.brandImage}
+                        draggable={false}
                     />
 
                     <img
                         src={cardDetails.image}
                         alt={cardDetails.title}
                         className={styles.projectImage}
+                        draggable={false}
                     />
                 </div>
             </div>
@@ -79,14 +81,64 @@ const ProjectCard = ({
     );
 };
 
-const FeaturedProjects = ({ data }: FeaturedProjectsProps) => {
+const FeaturedProjects = ({
+    data,
+}: FeaturedProjectsProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nextIndex, setNextIndex] = useState(0);
 
-    const [direction, setDirection] = useState<"next" | "prev">("next");
-    const [stage, setStage] = useState<"idle" | "out" | "in">("idle");
+    const [direction, setDirection] = useState<
+        "next" | "prev"
+    >("next");
+
+    const [stage, setStage] = useState<
+        "idle" | "out" | "in"
+    >("idle");
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+    /* -----------------------------
+       Swipe
+    ------------------------------ */
+
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
+
+    const SWIPE_THRESHOLD = 60;
+
+    /* -----------------------------
+       Navigation
+    ------------------------------ */
+
+    const goNext = () => {
+        if (stage !== "idle") return;
+
+        const next =
+            (currentIndex + 1) %
+            data.projects.length;
+
+        setDirection("next");
+        setNextIndex(next);
+        setStage("out");
+    };
+
+    const goPrev = () => {
+        if (stage !== "idle") return;
+
+        const prev =
+            (currentIndex -
+                1 +
+                data.projects.length) %
+            data.projects.length;
+
+        setDirection("prev");
+        setNextIndex(prev);
+        setStage("out");
+    };
+
+    /* -----------------------------
+       Autoplay
+    ------------------------------ */
 
     const startAutoplay = () => {
         if (intervalRef.current) {
@@ -94,14 +146,7 @@ const FeaturedProjects = ({ data }: FeaturedProjectsProps) => {
         }
 
         intervalRef.current = setInterval(() => {
-            if (stage !== "idle") return;
-
-            const next =
-                (currentIndex + 1) % data.projects.length;
-
-            setDirection("next");
-            setNextIndex(next);
-            setStage("out");
+            goNext();
         }, 3000);
     };
 
@@ -113,15 +158,70 @@ const FeaturedProjects = ({ data }: FeaturedProjectsProps) => {
                 clearInterval(intervalRef.current);
             }
         };
-    }, [currentIndex, stage, data.projects.length]);
+    }, [currentIndex, stage]);
+
+    /* -----------------------------
+       Dots
+    ------------------------------ */
 
     const changeSlide = (index: number) => {
-        if (stage !== "idle" || index === currentIndex) return;
+        if (
+            stage !== "idle" ||
+            index === currentIndex
+        )
+            return;
 
-        setDirection(index > currentIndex ? "next" : "prev");
+        setDirection(
+            index > currentIndex
+                ? "next"
+                : "prev"
+        );
+
         setNextIndex(index);
         setStage("out");
     };
+
+    /* -----------------------------
+       Touch
+    ------------------------------ */
+
+    const handleTouchStart = (
+        e: React.TouchEvent<HTMLDivElement>
+    ) => {
+        touchStartX.current =
+            e.touches[0].clientX;
+        touchEndX.current =
+            e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (
+        e: React.TouchEvent<HTMLDivElement>
+    ) => {
+        touchEndX.current =
+            e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        const distance =
+            touchStartX.current -
+            touchEndX.current;
+
+        if (
+            Math.abs(distance) <
+            SWIPE_THRESHOLD
+        )
+            return;
+
+        if (distance > 0) {
+            goNext();
+        } else {
+            goPrev();
+        }
+    };
+
+    /* -----------------------------
+       Animation
+    ------------------------------ */
 
     const handleAnimationEnd = () => {
         if (stage === "out") {
@@ -145,7 +245,9 @@ const FeaturedProjects = ({ data }: FeaturedProjectsProps) => {
 
     return (
         <section
-            className={styles.featuredProjectsContainer}
+            className={
+                styles.featuredProjectsContainer
+            }
             id={data.id}
         >
             <div className="section-title">
@@ -159,28 +261,54 @@ const FeaturedProjects = ({ data }: FeaturedProjectsProps) => {
             <div className={styles.slider}>
                 <div
                     className={animationClass}
-                    onAnimationEnd={handleAnimationEnd}
+                    onAnimationEnd={
+                        handleAnimationEnd
+                    }
+                    onTouchStart={
+                        handleTouchStart
+                    }
+                    onTouchMove={
+                        handleTouchMove
+                    }
+                    onTouchEnd={
+                        handleTouchEnd
+                    }
                 >
                     <ProjectCard
-                        cardDetails={data.projects[currentIndex]}
+                        cardDetails={
+                            data.projects[
+                                currentIndex
+                            ]
+                        }
                         indexID={currentIndex}
-                        totalProjects={data.projects.length}
+                        totalProjects={
+                            data.projects.length
+                        }
                     />
                 </div>
 
                 <div className={styles.dots}>
-                    {data.projects.map((_, index) => (
-                        <button
-                            key={index}
-                            type="button"
-                            onClick={() => changeSlide(index)}
-                            className={`${styles.dot} ${
-                                currentIndex === index
-                                    ? styles.activeDot
-                                    : ""
-                            }`}
-                        />
-                    ))}
+                    {data.projects.map(
+                        (_, index) => (
+                            <button
+                                key={index}
+                                type="button"
+                                onClick={() =>
+                                    changeSlide(
+                                        index
+                                    )
+                                }
+                                className={`${
+                                    styles.dot
+                                } ${
+                                    currentIndex ===
+                                    index
+                                        ? styles.activeDot
+                                        : ""
+                                }`}
+                            />
+                        )
+                    )}
                 </div>
             </div>
         </section>
